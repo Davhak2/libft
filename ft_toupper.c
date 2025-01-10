@@ -2,5 +2,7 @@
 
 int ft_toupper(int i)
 {
-	return (i - 32);
+	if (i >= 97 && i <= 122)
+		return (i - 32);
+	return (i);
 }
