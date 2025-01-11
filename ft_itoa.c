@@ -6,7 +6,7 @@
 /*   By: davihako <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 14:41:50 by davihako          #+#    #+#             */
-/*   Updated: 2025/01/11 14:41:50 by davihako         ###   ########.fr       */
+/*   Updated: 2025/01/11 18:01:20 by davihako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ static int	length(int num)
 	}
 	return (count);
 }
+
 char	*ft_itoa(int num)
 {
 	int		len;

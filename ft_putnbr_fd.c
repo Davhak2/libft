@@ -6,7 +6,7 @@
 /*   By: davihako <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 14:42:10 by davihako          #+#    #+#             */
-/*   Updated: 2025/01/11 14:42:10 by davihako         ###   ########.fr       */
+/*   Updated: 2025/01/11 18:06:52 by davihako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void ft_putnbr_fd(int n, int fd)
 	else if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
-		n *= -1;
+		ft_putnbr_fd(-n, fd);
 	}
 	else if (n >= 10)
 	{

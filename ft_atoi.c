@@ -6,7 +6,7 @@
 /*   By: davihako <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 14:41:19 by davihako          #+#    #+#             */
-/*   Updated: 2025/01/11 17:52:47 by davihako         ###   ########.fr       */
+/*   Updated: 2025/01/11 17:59:40 by davihako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_atoi(const char *str)
 {
-	int	mi∏nus;
+	int	minus;
 	int	res;
 
 	res = 0;
