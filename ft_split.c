@@ -34,7 +34,9 @@ char	**ft_split(const char *str, char c)
 	size_t	i = 0;
 	size_t	j = 0;
 	size_t	k = 0;
-	size_t	wc = word_count(str, c);
+	size_t	wc;
+
+	wc = word_count(str, c);
 	char	**out = (char **)malloc(sizeof(char *) * (wc + 1));
 
 	if (!out)
