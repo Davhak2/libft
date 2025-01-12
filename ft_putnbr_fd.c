@@ -6,13 +6,13 @@
 /*   By: davihako <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 14:42:10 by davihako          #+#    #+#             */
-/*   Updated: 2025/01/11 18:06:52 by davihako         ###   ########.fr       */
+/*   Updated: 2025/01/12 15:42:56 by davihako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)
 		ft_putstr_fd("-2147483648", fd);
