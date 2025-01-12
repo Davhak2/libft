@@ -16,12 +16,14 @@ char	*ft_strnstr(const char *str, const char *key, size_t len)
 {
 	size_t	keylen;
 
-	if (!(*key) || !key)
+	if (!key || !(*key))
 		return ((char *)str);
+	if (len == 0)
+		return (NULL);
 	keylen = ft_strlen(key);
 	while (*str && len >= keylen)
 	{
-		if (*str == *key && !(ft_strncmp(str, key, keylen)))
+		if (*str == *key && ft_strncmp(str, key, keylen) == 0)
 			return ((char *)str);
 		++str;
 		--len;
