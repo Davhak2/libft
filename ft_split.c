@@ -53,7 +53,7 @@ char	**ft_split(const char *str, char c)
 			out[k] = (char *)malloc(sizeof(char) * ((i - j) + 1));
 			if (!out[k])
 				return (NULL);
-			ft_strlcpy(out[k++], &str[j], i - j);
+			ft_strlcpy(out[k++], &str[j], i - j + 1);
 		}
 	}
 	out[k] = NULL;
