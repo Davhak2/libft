@@ -6,7 +6,7 @@
 /*   By: davihako <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 14:41:50 by davihako          #+#    #+#             */
-/*   Updated: 2025/01/11 18:01:20 by davihako         ###   ########.fr       */
+/*   Updated: 2025/01/14 15:59:55 by davihako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	length(int num)
 char	*ft_itoa(int num)
 {
 	int		len;
- 	int		i;
+	int		i;
 	char	*res;
 
 	if (!num)

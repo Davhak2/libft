@@ -6,56 +6,93 @@
 /*   By: davihako <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 14:42:14 by davihako          #+#    #+#             */
-/*   Updated: 2025/01/12 16:24:17 by davihako         ###   ########.fr       */
+/*   Updated: 2025/01/14 16:15:55 by davihako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	word_count(const char *s, char c)
+static size_t	words_calc(const char *s, char c)
 {
 	size_t	count;
+	size_t	is_new;
 
 	count = 0;
+	is_new = 1;
 	while (*s)
 	{
-		while (*s == c)
-			s++;
-		if (*s)
-			count++;
-		while (*s && *s != c)
-			s++;
+		if (*s != c && is_new)
+		{
+			is_new = 0;
+			++count;
+		}
+		else if (*s == c && !is_new)
+			is_new = 1;
+		++s;
 	}
 	return (count);
 }
 
-char	**ft_split(const char *str, char c)
+char	*new_word(const char **s, char c)
 {
-	size_t	i = 0;
-	size_t	j = 0;
-	size_t	k = 0;
-	size_t	wc;
+	char	*end;
+	size_t	word_len;
+	char	*new_word;
 
-	wc = word_count(str, c);
-	char	**out = (char **)malloc(sizeof(char *) * (wc + 1));
-
-	if (!out)
+	while (**s == c)
+		++*s;
+	end = ft_strchr(*s, c);
+	if (end)
+		word_len = end - *s;
+	else
+		word_len = ft_strlen(*s);
+	new_word = (char *)malloc((word_len + 1) * sizeof(char));
+	if (!new_word)
 		return (NULL);
-	while (str[i])
+	ft_strlcpy(new_word, *s, word_len + 1);
+	if (end)
+		*s = end;
+	return (new_word);
+}
+
+static void	free_split(char ***s, size_t count)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < count)
 	{
-		while (str[i] == c)
-			i++;
-		j = i;
-		while (str[i] && str[i] != c)
-			i++;
-		if (i > j)
-		{
-			out[k] = (char *)malloc(sizeof(char) * ((i - j) + 1));
-			if (!out[k])
-				return (NULL);
-			ft_strlcpy(out[k++], &str[j], i - j + 1);
-		}
+		free((*s)[i]);
+		++i;
 	}
-	out[k] = NULL;
-	return (out);
+	free(*s);
+	*s = NULL;
+	return ;
+}
+
+char	**ft_split(char const *s, char c)
+{
+	size_t	count;
+	char	**words_ptr;
+	size_t	index;
+
+	if (!s)
+		return (NULL);
+	count = words_calc(s, c) + 1;
+	words_ptr = (char **)malloc(count * sizeof(void *));
+	if (!words_ptr)
+		return (NULL);
+	index = 0;
+	while (index < count - 1)
+	{
+		words_ptr[index] = new_word(&s, c);
+		if (!words_ptr[index])
+		{
+			free_split(&words_ptr, index);
+			return (NULL);
+		}
+		++index;
+	}
+	words_ptr[index] = NULL;
+	return (words_ptr);
 }

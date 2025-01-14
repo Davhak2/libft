@@ -6,7 +6,7 @@
 /*   By: davihako <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 14:42:37 by davihako          #+#    #+#             */
-/*   Updated: 2025/01/12 16:28:58 by davihako         ###   ########.fr       */
+/*   Updated: 2025/01/14 16:17:13 by davihako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(str, &s1[start], end - start + 2);
 	return (str);
 }
-

@@ -6,7 +6,7 @@
 /*   By: davihako <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 14:42:28 by davihako          #+#    #+#             */
-/*   Updated: 2025/01/11 14:42:28 by davihako         ###   ########.fr       */
+/*   Updated: 2025/01/14 16:16:44 by davihako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *str)
 {
-	const char *str1;
+	const char	*str1;
 
 	str1 = str;
 	while (*str)
