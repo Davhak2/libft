@@ -6,7 +6,7 @@
 /*   By: davihako <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 14:42:34 by davihako          #+#    #+#             */
-/*   Updated: 2025/01/12 17:01:11 by davihako         ###   ########.fr       */
+/*   Updated: 2025/01/19 21:05:24 by davihako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strnstr(const char *str, const char *key, size_t len)
 {
 	size_t	keylen;
 
-	if (!key || !(*key))
+	if (!(*key))
 		return ((char *)str);
 	if (len == 0)
 		return (NULL);
